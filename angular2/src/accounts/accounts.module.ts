@@ -1,7 +1,7 @@
 import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-import { AppPaginateComponent } from '../app/app-paginate.component';
+import { AppSharedComponentsModule } from '../app/app-shared-components.module';
 import { AppHttpService } from '../app/app-http.service';
 import { FormsModule } from '@angular/forms';
 
@@ -19,6 +19,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports: [
+    AppSharedComponentsModule,
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
@@ -28,7 +29,6 @@ const appRoutes: Routes = [
     AccountsEditComponent,
     AccountsNewComponent,
     AccountsViewComponent,
-    AppPaginateComponent
   ],
   //bootstrap: [],
   providers: [ AppHttpService ],
